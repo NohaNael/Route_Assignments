@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
   //Question 2
   else if (method === "PATCH" && url.startsWith("/user/")) {
     const id = url.split("/")[2];
-      const user_id=user.find(user => user.id===parseInt(id));
+      const user_id=user.find(u => u.id===parseInt(id));
       if (!user_id) {
         res.writeHead(404, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ error: "User not found" }));
@@ -48,11 +48,20 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
 
     const updates = JSON.parse(bodyy);
-
-    if (updates.name) user_id.name = updates.name;
-    if (updates.email) user_id.email = updates.email;
+    
+    
+     const emailExists = user.find(u => u.email === updates.email && u.id !== parseInt(id));
+      if (emailExists) {
+        res.writeHead(409, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Email already exists" }));
+        return;
+      }
+      user_id.email = updates.email;
+      user_id.name = updates.name;
+    
+    
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ message: "User updated successfully" }));
+    res.end(JSON.stringify({ message: "User updated successfully", user: user_id }));
    });
   }
   //Question 3
