@@ -125,7 +125,7 @@ app.post('/user', (req, res) => {
 
    // Question 3:
 
-app.delete('/user/:id?', (req, res) => {
+app.delete('/user/:id', (req, res) => {
     // Get ID either from params or body
     const userId = Number(req.params.id || req.body.id);
 
@@ -175,8 +175,136 @@ app.delete('/user/:id?', (req, res) => {
         });
     });
 });
+    
+// Question 4:
 
-           
+app.get('/user/getByName', (req, res) => {
+    const name = req.query.name;
+
+    if (!name) {
+        return res.status(400).json({
+            message: 'Name query parameter is required'
+        });
+    }
+
+    fs.readFile("users.json", 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Error reading users file'
+            });
+        }
+
+        let users;
+
+        try {
+            users = JSON.parse(data);
+        } catch (error) {
+            return res.status(500).json({
+                message: 'Invalid users data'
+            });
+        }
+         const foundUser = users.find(
+            user => user.name.toLowerCase() === name.toLowerCase()
+        );
+
+        if (!foundUser) {
+            return res.status(404).json({
+                message: 'User not found'
+            });
+        }
+
+        res.status(200).json(foundUser);
+    });
+});
+
+
+// Question 5:
+app.get('/user', (req, res) => {
+    fs.readFile("users.json", 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Error reading users file'
+            });
+        }
+
+        let users;
+
+        try {
+            users = JSON.parse(data);
+        } catch (error) {
+            return res.status(500).json({
+                message: 'Invalid users data'
+            });
+        }
+
+        res.status(200).json(users);
+    });
+});
+
+//Question 6:
+app.get('/user/filter', (req, res) => {
+    const minAge = Number(req.query.minAge);
+
+    if (isNaN(minAge)) {
+        return res.status(400).json({
+            message: 'minAge query parameter is required and must be a number'
+        });
+    }
+
+    fs.readFile("users.json", 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Error reading users file'
+            });
+        }
+
+        let users;
+        try {
+            users = JSON.parse(data);
+        } catch (error) {
+            return res.status(500).json({
+                message: 'Invalid users data'
+            });
+        }
+
+        const filteredUsers = users.filter(user => Number(user.age) >= minAge);
+
+        res.status(200).json(filteredUsers);
+    });
+});
+
+
+//Question 7:
+app.get('/user/:id', (req, res) => {
+    const userId = Number(req.params.id);
+
+    fs.readFile("users.json", 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Error reading users file'
+            });
+        }
+
+        let users;
+
+        try {
+            users = JSON.parse(data);
+        } catch (error) {
+            return res.status(500).json({
+                message: 'Invalid users data'
+            });
+        }
+
+        const foundUser = users.find(user => user.id === userId);
+
+        if (!foundUser) {
+            return res.status(404).json({ message: 'User not found'
+            });
+        }
+
+        res.status(200).json(foundUser);
+    });
+});
 
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
