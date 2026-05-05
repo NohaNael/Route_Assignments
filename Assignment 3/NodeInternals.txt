@@ -1,0 +1,34 @@
+Question 1 :
+Event Loop allows Node.js to perform non-blocking I/O operations, 
+this loop handles thousands of concurrent operations efficiently without creating multiple threads, making it ideal for I/O-heavy applications.
+
+
+Question 2:
+Libuv is cross platform I/O library that handles Asynchronous I/O operations (File System Operations) 
+and manages a pool of threads (default: 4 up to 1024).
+
+
+Question 3:
+Node.js handles asynchronous operations through a single-threaded event loop and Libuv,
+When you call an async function like fs.readFile(), Node.js registers your callback and delegates the work to Libuv, allowing the main thread to continue without blocking,
+Libuv processes the operation,
+The event loop monitors for completed operations and executes their callbacks on the main thread when ready. This allows Node.js to efficiently handle thousands of concurrent operations without creating multiple threads, making it ideal for I/O-heavy applications.
+
+Question 4 :
+Call Stack: LIFO data structure that tracks function execution,JavaScript executes code from the call stack synchronously
+When a function is called, it's pushed onto the stack, when it returns, it's popped off.
+
+Event Queue: A FIFO queue that holds callback functions ready to execute,Stores callbacks from completed async operations, Callbacks wait here until the call stack is empty.
+
+Event Loop: A continuous monitoring mechanism that coordinates between the call stack and event queues
+Checks if the call stack is empty, then moves callbacks from the queue to the stack
+
+
+Question 5 :
+The thread pool is managed by Libuv and consists of worker threads that handle blocking operations that can't be performed asynchronously by the OS.
+process.env.UV_THREADPOOL_SIZE = 22;
+
+
+Question 6:
+Blocking code: Runs directly on the main thread, halting the event loop.
+Non-blocking code: Delegated to Libuv, event loop continues, callbacks executed when ready
