@@ -1,1 +1,0 @@
-export { default as productController } from "./notes.controller.js";
