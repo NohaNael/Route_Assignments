@@ -1,0 +1,86 @@
+{
+  "info": {
+    "_postman_id": "b01804bf-cab2-4604-821b-03597cbb26ef",
+    "name": "SARAHA_APP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53394451",
+    "_collection_link": "https://go.postman.co/collection/53394451-b01804bf-cab2-4604-821b-03597cbb26ef?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Message",
+      "item": []
+    },
+    {
+      "name": "User",
+      "item": []
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "SignUp",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Fname\": \"Noha\",\r\n  \"Lname\": \"Nael\",\r\n  \"email\": \"noha@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"gender\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \r\n  \"email\": \"noha@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

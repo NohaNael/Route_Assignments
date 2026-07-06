@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
             return this.provider === provider.SYSTEM; // Password is required only for system users , if it returns true then the field is required otherwise not
         }
     },
+    phone: {
+        type: String,
+        required: [true, "Phone is required"],
+    },
     DOB: Date,
     gender: {
         type: Number,
@@ -34,7 +38,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         enum: Object.values(UserRole),  
         default: UserRole.USER
-},
+},  
+    confirm_email: Date,
+    profilePic: String,
+    coverPic: [String],
+
     provider: {
         type: Number,   
         enum: Object.values(provider),

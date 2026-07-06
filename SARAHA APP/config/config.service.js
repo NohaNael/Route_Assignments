@@ -1,7 +1,7 @@
 import { resolve } from "node:path";
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
-
+import dotenv from "dotenv";
 export const NODE_ENV = process.env.NODE_ENV || "development"; 
 
 const envPath = {
@@ -11,11 +11,19 @@ const envPath = {
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const before = Object.keys(process.env).length;
-process.loadEnvFile(resolve(__dirname, envPath[NODE_ENV]));
+dotenv.config({ path: resolve(__dirname, envPath[NODE_ENV]) });
 const injected = Object.keys(process.env).length - before;
 console.log(`injected env (${injected})`);
 
 export const PORT = process.env.PORT || 6000;
 export const DB_URL = process.env.DB_URL;
 export const SALTROUNDS = process.env.SALTROUNDS || 10;
-console.log({ NODE_ENV, PORT });
+export const ENCRYPTION_KEY = process.env.Encription_key;
+export const Access_Token_Secret_Admin = process.env.Access_Token_Secret_Admin;
+export const Access_Token_Secret_User = process.env.Access_Token_Secret_User;
+export const REFRESH_TOKEN_Secret_Admin = process.env.REFRESH_TOKEN_Secret_Admin;   
+export const REFRESH_TOKEN_Secret_User = process.env.REFRESH_TOKEN_Secret_User; 
+export const Client_ID = process.env.Client_ID;
+console.log({ NODE_ENV, PORT, SALTROUNDS, hasEncryptionKey: Boolean(ENCRYPTION_KEY), hasAccessTokenSecretAdmin: Boolean(Access_Token_Secret_Admin), hasAccessTokenSecretUser: Boolean(Access_Token_Secret_User), hasClientID: Boolean(Client_ID) });
+
+
