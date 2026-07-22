@@ -9,7 +9,7 @@ export const generalfields= {
       password: joi.string().min(8).required().alphanum(),
       phone: joi.string().pattern(/^(\+20|020|0)?1[0125][0-9]{8}$/),
       DOB: joi.date().iso(),
-      gender: joi.string().valid("male", "female"),
+      gender: joi.number().valid(0, 1),
       DOB: joi.date().iso(),
       id:joi.string().custom((value, helpers) => {
         return Types.ObjectId.isValid(value) ||helpers.message("Invalid ObjectId");
@@ -21,7 +21,7 @@ export const generalfields= {
 export const validation =(schema)=>{
     return async (req,res,next)=>{
         const error=[];
-        for (const key in Object.keys(schema)) {
+        for (const key of Object.keys(schema)) {
             const result= await schema[key].validate(req[key],{abortEarly:false});
             if (result.error) {
                 error.push({key,details:result.error.details});
@@ -30,6 +30,6 @@ export const validation =(schema)=>{
             
         if (error.length > 0) {
             throw badRequestResponse("validation error",error);
-           return next();
         }
+        return next();
 }}

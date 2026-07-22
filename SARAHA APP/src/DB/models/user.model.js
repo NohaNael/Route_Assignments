@@ -40,16 +40,37 @@ const userSchema = new mongoose.Schema({
         default: UserRole.USER
 },  
     confirm_email: Date,
+    confirm_email_Otp: String,
+    forgot_password_Otp: String,
     profilePic: String,
     coverPic: [String],
-
+    freezedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
+    freezedAt: Date,
+    freezedByRole: {
+        type: Number,
+        enum: Object.values(UserRole),
+    },
+    restoredBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
+    restoredAt: Date,
+    restoredByRole: {
+        type: Number,
+        enum: Object.values(UserRole),
+    },
+    changeCredentialsTime: Date,
+    providerId: String,
     provider: {
         type: Number,   
         enum: Object.values(provider),
         default: provider.SYSTEM
     }
 }, 
-{ timestamps: true,toObject: { virtuals: true }, toJSON: { virtuals: true } });
+{ timestamps: true, toObject: { virtuals: true }, toJSON: { virtuals: true } });
 
 userSchema.virtual("username").get(function() {
     return `${this.Fname} ${this.Lname}`;

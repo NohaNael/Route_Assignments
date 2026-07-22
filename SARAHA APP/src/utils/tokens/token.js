@@ -1,14 +1,15 @@
 import jwt from "jsonwebtoken";
 import { Access_Token_Secret_Admin, Access_Token_Secret_User, REFRESH_TOKEN_Secret_Admin, REFRESH_TOKEN_Secret_User } from "../../../config/config.service.js";
 import { signarureEnum, UserRole } from "../enums/user.enum.js";
+import { v4 as uuidv4 } from 'uuid';
 
 
-export const generateToken = (payload, secret, options={expiresIn: "1h"}) => {
-    if (!secret) {
+export const generateToken = ({payload, signature, options={expiresIn: "1h"}}) => {
+    if (!signature) {
         throw new Error("JWT secret is missing");
     }
 
-    return jwt.sign(payload, secret, options);
+    return jwt.sign(payload, signature, options);
 }
 
 export const verifyToken = (token, secret) => {
@@ -49,17 +50,19 @@ export const getNewloginCredentials = (user) => {
         isAdmin ? signarureEnum.admin : signarureEnum.user
     );
 
-    const accessToken = generateToken(
-        { id: user._id },
-        signature.accessSignature,
-        { expiresIn: isAdmin ? "30m" : "1h" }
-    );
+    const jwtid = uuidv4(); // Generate a unique identifier for the token
 
-    const refreshToken = generateToken(
-        { id: user._id },
-        signature.refreshSignature,
-        { expiresIn: isAdmin ? "1d" : "7d" }
-    );
+    const accessToken = generateToken({
+        payload: { id: user._id },
+        signature: signature.accessSignature,
+        options: { expiresIn: isAdmin ? "30m" : "1h" ,jwtid }  // Add jti claim with a unique identifier
+    });
+
+    const refreshToken = generateToken({
+        payload: { id: user._id },
+        signature: signature.refreshSignature,
+        options: { expiresIn: isAdmin ? "1d" : "7d", jwtid}  // Add jti claim with a unique identifier
+    });
 
     return { accessToken, refreshToken };
 };

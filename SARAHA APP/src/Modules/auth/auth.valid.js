@@ -25,9 +25,28 @@ export const loginSchema = {
 };
 
 
+export const confirmEmailSchema = {
+  body:joi.object({
+  email: generalValid.generalfields.email,
+  otp: joi.string().pattern(/^\d{6}$/).required(),
+  
+})
+};
 
+export const forgetPasswordSchema = {
+  body:joi.object({
+  email: generalValid.generalfields.email,
 
+  })
+}
 
-// id:joi.string().custom((value, helpers) => {
-//     return Types.objectId.isValid(value) ||helpers.message("Invalid ObjectId");
-//   })
+export const resetPasswordSchema = {
+  body:joi.object({
+  email: generalValid.generalfields.email,
+
+  })
+  .required(),newPassword:joi.string().min(8).max(20).required(),
+   otp: joi.string().pattern(/^\d{6}$/).required(),
+   confirmPassword:joi.ref('newPassword')
+
+}

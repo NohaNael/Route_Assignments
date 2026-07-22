@@ -48,7 +48,7 @@ export const updateone=async({model,filter,update,options={}}={})=>{
 };
 
 export const findoneandupdate=async({model,filter,update,options={}}={})=>{
-    return await model.findOneAndUpdate(filter,{...update,$inc:{__v:1}},{...options, new:true, runValidators:true} );
+    return await model.findOneAndUpdate(filter,{...update,$inc:{__v:1}},{...options, returnDocument: 'after', runValidators:true} );
 };
 
 export const deleteone=async({model,filter}={})=>{

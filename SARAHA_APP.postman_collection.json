@@ -13,7 +13,51 @@
     },
     {
       "name": "User",
-      "item": []
+      "item": [
+        {
+          "name": "getprofile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0cj2}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"nohanael@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/user/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
     },
     {
       "name": "Auth",
@@ -25,7 +69,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"Fname\": \"Noha\",\r\n  \"Lname\": \"Nael\",\r\n  \"email\": \"noha@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"gender\": 1\r\n}",
+              "raw": "{\r\n  \"Fname\": \"Nohaa\",\r\n  \"Lname\": \"Naell\",\r\n  \"email\": \"nohanael@gmail.com\",\r\n  \"password\": \"123kk456\",\r\n  \"gender\": 0,\r\n  \"phone\":\"029384763\",\r\n  \"DOB\": \"2000-01-01\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -51,12 +95,30 @@
         },
         {
           "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "const token = res.token || res.data?.token || res.accessToken || res.data?.accessToken;",
+                  "if (token) {",
+                  "    pm.collectionVariables.set(\"authToken\", token);",
+                  "    console.log(\"Token saved to authToken variable\");",
+                  "} else {",
+                  "    console.warn(\"Token not found in response. Check the response structure.\");",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \r\n  \"email\": \"noha@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}",
+              "raw": "{\r\n  \"email\": \"nohanael@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -79,8 +141,172 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0bti}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"nohanael@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/refresh-token",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login_with_google",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/social-login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "social-login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "uploadfile",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "fce25a4b-ac0e-4d25-a3de-e7e5b5d78203",
+                  "src": "/C:/Users/ex1naelno/OneDrive - Prometeon/Pictures/Screenshots/Screenshot 2026-06-21 144407.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/user/upload-file",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "upload-file"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update profile pic",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_06u7}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "fce25a4b-ac0e-4d25-a3de-e7e5b5d78203",
+                  "src": "/C:/Users/ex1naelno/OneDrive - Prometeon/Pictures/Screenshots/Screenshot 2026-06-21 144407.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/user/upload-cover-img",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "upload-cover-img"
+              ]
+            }
+          },
+          "response": []
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_0ia8",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0t7j",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0l1p",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0cj2",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0pgo",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0bti",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_14qn",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_06u7",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_01si",
+      "secret": true
     }
   ]
 }
