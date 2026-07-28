@@ -5,6 +5,7 @@ import { forbiddenResponse, notFoundResponse, unauthorizedResponse } from "../ut
 import { signarureEnum } from "../utils/enums/user.enum.js";
 import { verifyToken, getsignature } from "../utils/tokens/token.js";
 import {Access_Token_Secret_User} from "../../config/config.service.js";
+import { getRevokedToken, revoketoken, revoketokenKey } from "../DB/models/redis.srvice.js";
 export const tokenTypeEnum = {
     ACCESS: "access",
     REFRESH: "refresh",
@@ -58,6 +59,12 @@ if (!token) {
     if (!decoded) {
         throw unauthorizedResponse("Invalid or expired token");
     }
+
+    const isRevoked = await getRevokedToken({ key: revoketokenKey({userId:decoded.id,jti: decoded.jti}) });
+    if (isRevoked) {
+        throw unauthorizedResponse("Token has been revoked");
+    }
+
     if (await findone({ model: TokenModel, filter: { jti: decoded.jti } })) {
         throw unauthorizedResponse("Token has been revoked");
     }

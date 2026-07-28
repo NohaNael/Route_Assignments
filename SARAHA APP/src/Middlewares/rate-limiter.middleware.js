@@ -4,8 +4,8 @@ const blockedIps=new Set();
 
 const unblockersTimer=new Map();
 
-const RateLimit=6;
-const WindowTime=2*60*1000;
+const RateLimit=3;
+const WindowTime=60*1000;
 
 
 export const customRateLimiter=()=>{

@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import { Access_Token_Secret_Admin, Access_Token_Secret_User, REFRESH_TOKEN_Secret_Admin, REFRESH_TOKEN_Secret_User } from "../../../config/config.service.js";
 import { signarureEnum, UserRole } from "../enums/user.enum.js";
 import { v4 as uuidv4 } from 'uuid';
+import {Access_Token_Admin_Expires_In} from "../../../config/config.service.js";
 
 
 export const generateToken = ({payload, signature, options={expiresIn: "1h"}}) => {
