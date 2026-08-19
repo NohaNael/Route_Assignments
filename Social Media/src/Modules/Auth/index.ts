@@ -1,0 +1,1 @@
+export {default as authcontroller} from './auth.controller';
