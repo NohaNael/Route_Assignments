@@ -1,0 +1,16 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/batch
+method: POST
+body:
+  type: json
+  content: " [\r
+
+    \  { \"title\": \"Future\", \"year\": 2020, \"genres\": [\"Sci-Fi\"] },\r
+
+    \  { \"title\": \"Brave New World\", \"year\": 1932, \"genres\": [\"Science Fiction\"] },\r
+
+    \  { \"title\": \"1984\", \"year\": 1949, \"genres\": [\"Dystopian\"] }\r
+
+    ]"
+settings: {}
+order: 6000

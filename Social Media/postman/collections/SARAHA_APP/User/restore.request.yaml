@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/user/restore-account
+method: PATCH
+headers:
+  Authorization: "{{bearer_token_10nn}}"
+body:
+  type: text
+  content: ""
+settings: {}
+order: 4000

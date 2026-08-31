@@ -1,0 +1,7 @@
+$kind: http-request
+name: delete Comment
+url: http://localhost:3001/api/v1/post/comment/6a86f8b2f1852498d033c53e
+method: DELETE
+headers:
+  Authorization: Bearer {{json_web_token_0vf3}}
+order: 2859759135883993

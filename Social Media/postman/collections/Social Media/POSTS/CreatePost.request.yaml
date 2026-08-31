@@ -1,0 +1,16 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/post
+method: POST
+headers:
+  Authorization: "{{bearer_token_0zvu}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: content
+      value: Firstttt
+    - type: file
+      key: attachments
+      src: /C:/Users/ex1naelno/OneDrive - Prometeon/Desktop/REC.png
+settings: {}
+order: 1000

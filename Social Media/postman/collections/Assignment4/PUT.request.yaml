@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8000/user/1775424856460
+method: PUT
+body:
+  type: json
+  content: "{\r\n    \"name\":\"mooo\"\r\n}"
+settings: {}
+order: 2000

@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3000/suppliers/search?letter=f
+method: GET
+queryParams:
+  letter: f
+body:
+  type: json
+  content: ""
+settings: {}
+order: 8000

@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:3000/notes/all
+method: PATCH
+body:
+  type: json
+  content: '{"title":"world!"}'
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_006u}}"
+settings: {}
+order: 8000

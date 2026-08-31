@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/user/friend-request/6a86a5d45409ff33751405e0
+method: POST
+headers:
+  Authorization: Bearer {{json_web_token_05e5}}
+settings: {}
+order: 1000

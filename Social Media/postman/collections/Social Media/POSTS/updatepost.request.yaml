@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/post/6a85582370fabede4ca71b49/update
+method: PATCH
+headers:
+  Authorization: Bearer {{supabase_service_role_api_key_029b}}
+body:
+  type: json
+  content: '{"content":"updateeed"}'
+settings: {}
+order: 3000

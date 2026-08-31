@@ -1,0 +1,14 @@
+$kind: http-request
+name: remove device
+url: http://localhost:3001/api/v1/notifications/remove-device
+method: DELETE
+headers:
+  Authorization: "{{bearer_token_0zxz}}"
+body:
+  type: json
+  content: "{\r
+
+    \    \"token\":\"fW_UJPupzT8tOKO71Xg0Nk:APA91bH-XmiwrTEToXlhHiVaias3_1FSDmopGVtBFUm54HLGymTCZyJfVew4MRoKVxV7oBumKLSRCK26IjizQTUvVT060a9u8fF0U2kv6MIoZm_wWLOyeqU\"\r
+
+    }"
+order: 2820393618938035

@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/user/upload-file
+method: PATCH
+headers:
+  Authorization: "{{bearer_token_0r3o}}"
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src: /C:/Users/ex1naelno/OneDrive - Prometeon/Desktop/LLM/requirements.txt
+settings: {}
+order: 5000

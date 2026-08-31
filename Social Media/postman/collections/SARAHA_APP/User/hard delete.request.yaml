@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/user/6a38edb4534e3224f1451063/hard-delete
+method: PATCH
+headers:
+  Authorization: bearer {{supabase_service_role_api_key_0739}}
+body:
+  type: text
+  content: ""
+settings: {}
+order: 5000

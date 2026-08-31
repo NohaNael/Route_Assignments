@@ -1,0 +1,5 @@
+$kind: http-request
+url: http://localhost:8000/user/1775424856460
+method: DELETE
+settings: {}
+order: 3000

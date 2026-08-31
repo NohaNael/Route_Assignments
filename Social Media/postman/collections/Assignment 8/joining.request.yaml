@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/aggregate4
+method: GET
+body:
+  type: text
+  content: '{ "message": "Log message", "level": "info" }'
+settings: {}
+order: 19000

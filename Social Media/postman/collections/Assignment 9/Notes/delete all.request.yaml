@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://localhost:3000/note
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_006u}}"
+settings: {}
+order: 10000

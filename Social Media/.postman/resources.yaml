@@ -1,0 +1,15 @@
+workspace:
+  id: f8451739-2640-4e6a-8816-be425028bd23
+cloudResources:
+  collections:
+    ../postman/collections/Social Media: 53394451-e0f07580-d586-4548-8cea-f1edfac229a0
+    ../postman/collections/SARAHA_APP: 53394451-b01804bf-cab2-4604-821b-03597cbb26ef
+    ../postman/collections/Assignment 9: 53394451-6c668bd5-c637-4a81-bc90-6333e5596b70
+    ../postman/collections/Assignment 8: 53394451-91e779a7-f7f9-4d82-b4e4-23ecb96dd02b
+    ../postman/collections/comments api: 53394451-be6131c4-6f8a-4c65-9c2c-0b78897bce59
+    ../postman/collections/post apis: 53394451-4bd94563-cc36-42b9-b53b-f506e0b9e1cc
+    ../postman/collections/User apis: 53394451-fee6e312-b57d-46a2-9d94-e0a17f6d6d8c
+    ../postman/collections/Assignment6: 53394451-e7327e3f-29d2-4bfc-90f8-592f392b31eb
+    ../postman/collections/Assignment4: 53394451-63668ef1-0675-43d7-af37-984bd5cbc742
+    ../postman/collections/CRUD Operations: 53394451-0e5f14cf-1742-4b56-a392-043e1c890d03
+    ../postman/collections/My Collection: 53394451-300a688e-42b6-4119-ad32-1f76873ce42c

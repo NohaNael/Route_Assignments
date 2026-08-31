@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/auth/forget-password
+method: PATCH
+body:
+  type: json
+  content: '{"email":"nohanaelsaeed@gmail.com"}'
+settings: {}
+order: 7000

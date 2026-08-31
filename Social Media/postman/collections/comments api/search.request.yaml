@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3000/api/comments/search?word=1st
+method: GET
+queryParams:
+  word: 1st
+body:
+  type: json
+  content: '{"content":"updated"}'
+settings: {}
+order: 4000

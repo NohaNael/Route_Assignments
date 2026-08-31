@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://localhost:3000/suppliers
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"FreshFoods\",\r
+
+    \  \"phone\": \"01001234567\"\r
+
+    }"
+settings: {}
+order: 1000

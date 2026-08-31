@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/before-year?year=2000
+method: DELETE
+queryParams:
+  year: "2000"
+body:
+  type: text
+  content: '{ "year": 2022 }'
+settings: {}
+order: 14000

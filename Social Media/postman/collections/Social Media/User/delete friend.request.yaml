@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/user/friend/6a86a5d45409ff33751405e0
+method: DELETE
+headers:
+  Authorization: Bearer {{json_web_token_0cpn}}
+settings: {}
+order: 4000

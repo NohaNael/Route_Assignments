@@ -1,0 +1,18 @@
+$kind: http-request
+url: http://localhost:3000/notes/replace/6a21679f9592b6de3b53b76c
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"naah fff\",\r
+
+    \  \"content\": \"lalalalal nnn\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_006u}}"
+settings: {}
+order: 7000

@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/auth/confirm-email
+method: PATCH
+body:
+  type: json
+  content: "\r
+
+    \    { \"email\": \"nohanaelsaeed@gmail.com\", \"otp\": \"774719\" }\r\n"
+settings: {}
+order: 8000

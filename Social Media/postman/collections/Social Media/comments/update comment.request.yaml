@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/post/comment/6a86f8b2f1852498d033c53e
+method: PATCH
+headers:
+  Authorization: Bearer {{json_web_token_1a3n}}
+body:
+  type: json
+  content: '{"content":"updateddd"}'
+settings: {}
+order: 2000

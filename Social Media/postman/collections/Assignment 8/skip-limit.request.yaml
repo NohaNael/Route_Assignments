@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/skip-limit
+method: GET
+body:
+  type: text
+  content: '{ "year": 2022 }'
+settings: {}
+order: 11000

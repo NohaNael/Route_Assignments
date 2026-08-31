@@ -1,0 +1,64 @@
+$kind: collection
+name: Social Media
+description: ""
+variables:
+  - key: bearer_token_0zvu
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_02f9
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_029b
+    secret: true
+    disabled: false
+  - key: bearer_token_137v
+    secret: true
+    disabled: false
+  - key: json_web_token_05e5
+    secret: true
+    disabled: false
+  - key: bearer_token_1agn
+    secret: true
+    disabled: false
+  - key: json_web_token_0cpn
+    secret: true
+    disabled: false
+  - key: bearer_token_0yvz
+    secret: true
+    disabled: false
+  - key: json_web_token_1a3n
+    secret: true
+    disabled: false
+  - key: bearer_token_0f55
+    secret: true
+    disabled: false
+  - key: json_web_token_0w6u
+    secret: true
+    disabled: false
+  - key: bearer_token_0rxj
+    secret: true
+    disabled: false
+  - key: json_web_token_0vf3
+    secret: true
+    disabled: false
+  - key: bearer_token_132l
+    secret: true
+    disabled: false
+  - key: bearer_token_0xrk
+    secret: true
+    disabled: false
+  - key: json_web_token_0wp4
+    secret: true
+    disabled: false
+  - key: bearer_token_0zxz
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_08hk
+    secret: true
+    disabled: false
+  - key: json_web_token_0bug
+    secret: true
+    disabled: false
+  - key: bearer_token_17xb
+    secret: true
+    disabled: false

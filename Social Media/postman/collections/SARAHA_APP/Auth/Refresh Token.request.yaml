@@ -1,0 +1,18 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/auth/refresh-token
+method: POST
+headers:
+  Authorization: "{{bearer_token_0bti}}"
+body:
+  type: text
+  content: "{\r
+
+    \  \"email\": \"nohanael@gmail.com\",\r
+
+    \  \"password\": \"123456\"\r
+
+    \  \r
+
+    }"
+settings: {}
+order: 3000

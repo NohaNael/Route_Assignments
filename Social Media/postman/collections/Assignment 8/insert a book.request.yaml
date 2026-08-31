@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books
+method: POST
+body:
+  type: json
+  content: "{ \"title\": \"Book Title\",\r
+
+    \ \"author\": \"Author\", \r
+
+    \ \"year\": 2020 }"
+settings: {}
+order: 5000

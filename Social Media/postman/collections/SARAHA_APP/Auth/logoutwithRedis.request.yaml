@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/auth/logout-with-redis
+method: POST
+headers:
+  Authorization: bearer {{supabase_service_role_api_key_18s7}}
+body:
+  type: text
+  content: ""
+settings: {}
+order: 9000

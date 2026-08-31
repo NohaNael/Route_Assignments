@@ -1,0 +1,18 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/auth/signup
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"username\": \"nooo nael\",\r
+
+    \  \"email\": \"nohanaelsaeed@gmail.com\",\r
+
+    \  \"password\": \"secret123\",\r
+
+    \  \"confirmPassword\": \"secret123\"\r
+
+    }"
+settings: {}
+order: 4000

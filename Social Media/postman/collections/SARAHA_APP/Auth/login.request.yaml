@@ -1,0 +1,22 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/auth/login
+method: POST
+body:
+  type: json
+  content: "{\"email\":\"nohanaelsaeed@gmail.com\",\r
+
+    \"password\":\"123kk456\"}"
+scripts:
+  - type: afterResponse
+    code: |-
+      const res = pm.response.json();
+      const token = res.token || res.data?.token || res.accessToken || res.data?.accessToken;
+      if (token) {
+          pm.collectionVariables.set("authToken", token);
+          console.log("Token saved to authToken variable");
+      } else {
+          console.warn("Token not found in response. Check the response structure.");
+      }
+    language: text/javascript
+settings: {}
+order: 2000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/messages/send/6a674a1baac028958f28ed21
+method: POST
+body:
+  type: json
+  content: '{"content":"firsttt"}'
+settings: {}
+order: 1000

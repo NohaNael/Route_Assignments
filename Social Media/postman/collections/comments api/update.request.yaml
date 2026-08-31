@@ -1,0 +1,16 @@
+$kind: http-request
+url: http://localhost:3000/api/comments/1
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"userId\":1,\r
+
+    \    \"postId\":1,\r
+
+    \    \"content\":\"updates 1st\"\r
+
+    }"
+settings: {}
+order: 2000

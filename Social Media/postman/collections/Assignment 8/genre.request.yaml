@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/genre?genre=Science Fiction
+method: GET
+queryParams:
+  genre: Science Fiction
+body:
+  type: text
+  content: '{ "year": 2022 }'
+settings: {}
+order: 10000

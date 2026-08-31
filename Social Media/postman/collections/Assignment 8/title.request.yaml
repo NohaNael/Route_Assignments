@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/title?title=Brave New World
+method: GET
+queryParams:
+  title: Brave New World
+body:
+  type: json
+  content: ""
+settings: {}
+order: 8000

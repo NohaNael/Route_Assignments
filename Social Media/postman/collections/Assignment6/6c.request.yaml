@@ -1,0 +1,16 @@
+$kind: http-request
+url: http://localhost:3000/sales
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"productId\": 1,\r
+
+    \  \"quantity\": 2,\r
+
+    \  \"date\": \"2025-05-20\"\r
+
+    }"
+settings: {}
+order: 3000

@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://localhost:3000/notes/6a1fe27d5accb29af0c718b5
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_1bhu}}"
+settings: {}
+order: 2000

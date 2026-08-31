@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/Future
+method: PATCH
+body:
+  type: json
+  content: '{ "year": 2022 }'
+settings: {}
+order: 7000

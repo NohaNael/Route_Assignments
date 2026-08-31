@@ -29,6 +29,8 @@ export const env = {
 
     whitelist: process.env.whitelist as string,
 
+    FIREBASE_SERVICE_ACCOUNT_KEY: "./config/social-media-c31b9-firebase-adminsdk-fbsvc-9969eddbec.json"
+
   }
 
   export type Env = typeof env;

@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/post/6a855ab71c43fa05acd45fc1/comment
+method: POST
+headers:
+  Authorization: Bearer {{json_web_token_1a3n}}
+body:
+  type: json
+  content: '{"content":"helooo"}'
+settings: {}
+order: 1000

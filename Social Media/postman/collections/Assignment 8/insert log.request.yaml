@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/logs
+method: POST
+body:
+  type: json
+  content: '{ "message": "Log message", "level": "info" }'
+settings: {}
+order: 15000

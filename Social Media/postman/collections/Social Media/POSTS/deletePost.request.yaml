@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:3001/api/v1/post/6a85582370fabede4ca71b49/delete
+method: DELETE
+headers:
+  Authorization: Bearer {{supabase_service_role_api_key_029b}}
+settings: {}
+order: 4000

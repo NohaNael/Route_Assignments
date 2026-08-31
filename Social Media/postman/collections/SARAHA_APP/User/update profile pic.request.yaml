@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/user/upload-cover-img
+method: PATCH
+headers:
+  Authorization: "{{bearer_token_06u7}}"
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src: /C:/Users/ex1naelno/OneDrive - Prometeon/Pictures/Screenshots/Screenshot 2026-06-21 144407.png
+settings: {}
+order: 3000

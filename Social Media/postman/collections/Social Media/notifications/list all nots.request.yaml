@@ -1,0 +1,7 @@
+$kind: http-request
+name: list all nots
+url: http://localhost:3001/api/v1/notifications
+method: GET
+headers:
+  Authorization: Bearer {{json_web_token_0bug}}
+order: 3619309002757368

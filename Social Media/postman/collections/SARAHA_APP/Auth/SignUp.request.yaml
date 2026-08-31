@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/auth/signup
+method: POST
+body:
+  type: json
+  content: '{"Fname":"Ahmed","Lname":"Naell","email":"ahmednael@gmail.com","password":"123kk456","gender":1,"phone":"01234567890","DOB":"2000-01-01"}'
+settings: {}
+order: 1000

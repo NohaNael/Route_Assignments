@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8000/user/filter?minAge=21
+method: GET
+queryParams:
+  minAge: "21"
+settings: {}
+order: 6000

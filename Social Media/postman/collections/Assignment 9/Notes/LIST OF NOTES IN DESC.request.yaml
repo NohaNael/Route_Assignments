@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/notes/paginate-sort?page=2&limit=5
+method: GET
+queryParams:
+  page: "2"
+  limit: "5"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_1bhu}}"
+settings: {}
+order: 1000

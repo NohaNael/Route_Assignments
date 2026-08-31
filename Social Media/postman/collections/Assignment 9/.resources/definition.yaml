@@ -1,0 +1,10 @@
+$kind: collection
+name: Assignment 9
+description: ""
+variables:
+  - key: json_web_token_006u
+    secret: true
+  - key: json_web_token_1bhu
+    secret: true
+  - key: json_web_token_1326
+    secret: true

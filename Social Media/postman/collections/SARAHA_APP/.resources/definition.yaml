@@ -1,0 +1,50 @@
+$kind: collection
+name: SARAHA_APP
+description: ""
+variables:
+  - key: supabase_service_role_api_key_0ia8
+    secret: true
+  - key: bearer_token_0t7j
+    secret: true
+  - key: supabase_service_role_api_key_0l1p
+    secret: true
+  - key: bearer_token_0cj2
+    secret: true
+  - key: supabase_service_role_api_key_0pgo
+    secret: true
+  - key: bearer_token_0bti
+    secret: true
+  - key: json_web_token_14qn
+    secret: true
+  - key: bearer_token_06u7
+    secret: true
+  - key: supabase_service_role_api_key_01si
+    secret: true
+  - key: bearer_token_0r3o
+    secret: true
+  - key: supabase_service_role_api_key_0t85
+    secret: true
+  - key: supabase_service_role_api_key_0ue8
+    secret: true
+  - key: bearer_token_03gz
+    secret: true
+  - key: supabase_service_role_api_key_0eal
+    secret: true
+  - key: bearer_token_0lqq
+    secret: true
+  - key: bearer_token_10nn
+    secret: true
+  - key: json_web_token_07wi
+    secret: true
+  - key: supabase_service_role_api_key_07wi
+    secret: true
+  - key: supabase_service_role_api_key_0739
+    secret: true
+  - key: json_web_token_0738
+    secret: true
+  - key: bearer_token_18si
+    secret: true
+  - key: supabase_service_role_api_key_18s7
+    secret: true
+  - key: supabase_service_role_api_key_04rg
+    secret: true

@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:3000/user/2
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"ana\" , \"email\":\"ana@gmail.com\"\r
+
+    }"
+settings: {}
+order: 5000

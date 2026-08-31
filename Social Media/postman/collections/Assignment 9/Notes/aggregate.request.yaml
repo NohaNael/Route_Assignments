@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:3000/notes/aggregate?title=my%20note
+method: GET
+queryParams:
+  title: my%20note
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_1bhu}}"
+settings: {}
+order: 6000

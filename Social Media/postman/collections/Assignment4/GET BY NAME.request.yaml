@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8000/user/getByName?name=loo
+method: GET
+queryParams:
+  name: loo
+settings: {}
+order: 4000

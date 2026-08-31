@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/year?from=1990&to=2010
+method: GET
+queryParams:
+  from: "1990"
+  to: "2010"
+body:
+  type: text
+  content: '{ "year": 2022 }'
+settings: {}
+order: 9000

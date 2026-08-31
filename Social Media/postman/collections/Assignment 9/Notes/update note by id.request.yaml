@@ -1,0 +1,18 @@
+$kind: http-request
+url: http://localhost:3000/notes/6a21679f9592b6de3b53b76c
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"hello book\",\r
+
+    \  \"content\": \"hiii world\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_006u}}"
+settings: {}
+order: 5000

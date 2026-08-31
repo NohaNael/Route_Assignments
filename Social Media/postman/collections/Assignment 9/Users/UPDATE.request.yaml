@@ -1,0 +1,22 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/users
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \"name\": \"noha\",\r
+
+    \"email\": \"lamall@gmail.com\",\r
+
+    \"phone\": \"0123456789\",\r
+
+    \"age\": 23\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_1326}}"
+settings: {}
+order: 2000

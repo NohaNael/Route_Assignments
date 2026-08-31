@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:3000/api/v1/books/collection/books/index
+method: POST
+body:
+  type: text
+  content: ""
+settings: {}
+order: 4000
