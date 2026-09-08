@@ -1,0 +1,671 @@
+{
+  "info": {
+    "_postman_id": "b01804bf-cab2-4604-821b-03597cbb26ef",
+    "name": "SARAHA_APP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53394451",
+    "_collection_link": "https://go.postman.co/collection/53394451-b01804bf-cab2-4604-821b-03597cbb26ef?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Message",
+      "item": [
+        {
+          "name": "sendmsg",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"content\":\"firsttt\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/messages/send/6a674a1baac028958f28ed21",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "messages",
+                "send",
+                "6a674a1baac028958f28ed21"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get msgs",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer {{supabase_service_role_api_key_04rg}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"content\":\"firsttt\"}"
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/messages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "read",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "getprofile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0cj2}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"nohanael@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/user/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "freeze",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_10nn}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/user/freeze-account",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "freeze-account"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update profile pic",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_06u7}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "fce25a4b-ac0e-4d25-a3de-e7e5b5d78203",
+                  "src": "/C:/Users/ex1naelno/OneDrive - Prometeon/Pictures/Screenshots/Screenshot 2026-06-21 144407.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/user/upload-cover-img",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "upload-cover-img"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "restore",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_10nn}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/user/restore-account",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "restore-account"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "hard delete",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer {{supabase_service_role_api_key_0739}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/user/6a38edb4534e3224f1451063/hard-delete",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "6a38edb4534e3224f1451063",
+                "hard-delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "SignUp",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"Fname\":\"Ahmed\",\"Lname\":\"Naell\",\"email\":\"ahmednael@gmail.com\",\"password\":\"123kk456\",\"gender\":1,\"phone\":\"01234567890\",\"DOB\":\"2000-01-01\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/auth/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "const token = res.token || res.data?.token || res.accessToken || res.data?.accessToken;",
+                  "if (token) {",
+                  "    pm.collectionVariables.set(\"authToken\", token);",
+                  "    console.log(\"Token saved to authToken variable\");",
+                  "} else {",
+                  "    console.warn(\"Token not found in response. Check the response structure.\");",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"nohanaelsaeed@gmail.com\",\r\n\"password\":\"123kk456\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0bti}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"nohanael@gmail.com\",\r\n  \"password\": \"123456\"\r\n  \r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/refresh-token",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login_with_google",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/social-login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "social-login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "uploadfile",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0r3o}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "a7378afb-89d8-4f1e-99f1-5694392bb8fe",
+                  "src": "/C:/Users/ex1naelno/OneDrive - Prometeon/Desktop/LLM/requirements.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/user/upload-file",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "upload-file"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{supabase_service_role_api_key_0ue8}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"flag\":\"logout\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forgetpass",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"nohanaelsaeed@gmail.com\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/forget-password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "forget-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "otp",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n    { \"email\": \"nohanaelsaeed@gmail.com\", \"otp\": \"774719\" }\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/auth/confirm-email",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "confirm-email"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logoutwithRedis",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer {{supabase_service_role_api_key_18s7}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/v1/auth/logout-with-redis",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "logout-with-redis"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_0ia8",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0t7j",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0l1p",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0cj2",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0pgo",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0bti",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_14qn",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_06u7",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_01si",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0r3o",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0t85",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0ue8",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_03gz",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0eal",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0lqq",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_10nn",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_07wi",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_07wi",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0739",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0738",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_18si",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_18s7",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_04rg",
+      "secret": true
+    }
+  ]
+}

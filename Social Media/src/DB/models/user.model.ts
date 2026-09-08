@@ -17,7 +17,7 @@ export interface IUser {
     email: string;
     confirmedAt?: Date;
     confirmemailOTP?: string;
-
+    last_seen:Date;
     password: string;
     resetPasswordOTP?: string;
     deviceToken?: string;
@@ -45,6 +45,7 @@ export const userSchema = new Schema<IUser>({
     resetPasswordOTP: {type: String},
     phone: {type: String,required:true},
     address: {type: String, required: false},
+    last_seen:{type:Date},
     gender: {type: String, enum: Object.values(Genderenum),default:Genderenum.Female},
     role: {type: String, enum: Object.values(Roleenum), default: Roleenum.User},
     friends: [{type: Schema.Types.ObjectId, ref: "User"}],

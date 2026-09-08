@@ -22,3 +22,11 @@ export const toggleRead = {
         })
     })
 }
+
+export const toggleFav = {
+    params: joi.object({
+        messageID: joi.string().custom((value, helpers) => {
+            return Types.ObjectId.isValid(value) || helpers.message("invalid messageID format")
+        })
+    })
+}

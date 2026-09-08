@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "e0f07580-d586-4548-8cea-f1edfac229a0",
+    "name": "Social Media",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53394451",
+    "_collection_link": "https://go.postman.co/collection/53394451-e0f07580-d586-4548-8cea-f1edfac229a0?source=collection_link"
+  },
+  "item": [
+           
+    {
+      "name": "signUp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"noha nael\",\r\n  \"email\": \"nono.nael@gmail.com\",\r\n  \"password\": \"secret123\",\r\n  \"confirmPassword\": \"secret123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/v1/auth/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "confirm-email",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"nono.nael@gmail.com\",\r\n  \"otp\":\"718970\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/v1/auth/confirm-email",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "confirm-email"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"email\": \"nono.nael@gmail.com\",\r\n\"password\": \"secret123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/v1/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "bearer_token_0zvu",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_02f9",
+      "secret": true
+    }
+  ]
+}

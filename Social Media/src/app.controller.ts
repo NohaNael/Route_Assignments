@@ -5,9 +5,10 @@ import { env } from './config/config.service';
 import { corsOptions } from './Utils/cors/cors';
 import rateLimit,{RateLimitRequestHandler} from 'express-rate-limit';
 import { globalErrorHandler, notFoundException } from './Utils/response/error.response';
-import { authcontroller, notificationController, postcontroller, usercontroller } from './Modules';
+import { authcontroller, chatcontroller, notificationController, postcontroller, usercontroller } from './Modules';
 import connectDB from './DB/connection';
 import { initializeFirebase } from './Utils/firebase/firebase.config';
+import { Server, Socket } from 'socket.io';
 
 
 
@@ -24,7 +25,6 @@ export const bootstrap = async ():Promise<void> => {
     const app:Express =express();
 
     app.use(helmet(),limiter,cors(corsOptions));
-    app.use(cors(corsOptions));
     app.use(express.json());
     initializeFirebase();
 
@@ -38,6 +38,7 @@ export const bootstrap = async ():Promise<void> => {
     app.use('/api/v1/post',postcontroller);
     app.use('/api/v1/user',usercontroller);
     app.use('/api/v1/notifications',notificationController  )
+      app.use('/api/v1/chat', chatcontroller  )
 
     // const user = new userModel({
     //     username: 'Noha Nael',
@@ -53,8 +54,52 @@ export const bootstrap = async ():Promise<void> => {
     app.use(globalErrorHandler);
 
 
-    app.listen(env.PORT, () => {
+   const HTTPServer= app.listen(env.PORT, () => {
         console.log('Server is running on port 3001');
     });
+
+    const io=new Server(HTTPServer,{cors:{
+        origin:"*",
+    },
 }
+)
+    io.use(async(socket:Socket,next)=>{
+        console.log(socket.handshake.auth)
+        console.log(socket.handshake.headers)
+
+    
+        next()
+    })
+    io.on("connection",(socket:Socket)=>
+    {
+        console.log(socket.id)
+        socket.emit("product",{productId:"ahndcf",
+            productName:"laptop",
+            price:400,
+        },
+        (res:string)=>{
+            console.log(res)
+        }
+        )
+        // socket.on("say hi",(data,callback)=>{
+        //     console.log(data)
+        //     callback("hello client side")
+        // })
+
+        socket.on("disconnect",()=>{
+            console.log(`logout from :${socket.id}`)
+        })
+    })
+
+
+    // io.of("/admin").on("connection",(socket:Socket)=>{
+    //     console.log("admin chanel",socket.id)
+
+    //     socket.on("disconnect",()=>{
+    //         console.log(`logout from :${socket.id}`)
+    //     })
+    // })
+}
+
+
 
